@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  @apply box-border;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-vs-darker text-gray-100 font-sans;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-vs-dark;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-vs-navy-light rounded;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-vs-navy;
+}
+
+/* Custom utilities */
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 bg-vs-red hover:bg-vs-red-dark text-white rounded-lg font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-vs-red-light focus:ring-offset-2 focus:ring-offset-vs-dark;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-3 bg-vs-navy hover:bg-vs-navy-light text-white rounded-lg font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-vs-cyan focus:ring-offset-2 focus:ring-offset-vs-dark;
+  }
+
+  .btn-ghost {
+    @apply px-6 py-3 bg-transparent border-2 border-vs-red text-vs-red hover:bg-vs-red hover:text-white rounded-lg font-semibold transition-all duration-200;
+  }
+
+  .card {
+    @apply bg-vs-dark rounded-lg border border-gray-700/50 shadow-lg;
+  }
+
+  .card-hover {
+    @apply card hover:border-vs-red/50 hover:shadow-glow-red transition-all duration-300 cursor-pointer;
+  }
+
+  .badge-low {
+    @apply inline-flex items-center gap-2 px-3 py-1 bg-vs-green/20 text-vs-green rounded-full text-sm font-medium;
+  }
+
+  .badge-medium {
+    @apply inline-flex items-center gap-2 px-3 py-1 bg-vs-amber/20 text-vs-amber rounded-full text-sm font-medium;
+  }
+
+  .badge-high {
+    @apply inline-flex items-center gap-2 px-3 py-1 bg-vs-red/20 text-vs-red-light rounded-full text-sm font-medium;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-vs-red to-vs-navy bg-clip-text text-transparent;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 bg-vs-darker border-2 border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-vs-red focus:shadow-glow-red transition-all duration-200;
+  }
+}
